@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Spelling Helper</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            #spellings{
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .wordSpelling{
+                /*width: fit-content;*/
+                /*min-width: 5em;*/
+                overflow: auto;
+                margin:0.5em;
+                margin-top: 2em;
+                border-bottom: 2px solid black;
+                /*animation-fill-mode: forwards;*/
+                /*animation-timing-function: ease-out;*/
+                transition: width 0.5s;
+                transform-origin: left;
+                transition: transform 500ms;
+            }
+
+            .moving{
+                transform:translateX(-100%);
+            }
+
+            .letterBox, .wordBtn{
+                display: flex;
+                border: 2px solid black;
+                margin-bottom: 0.5em;
+            }
+
+            .wordBtn:hover{
+                background-color: black;
+                color: white;
+            }
+
+            .letterStart{
+                border-right: 2px solid black;
+            }
+
+            .letterStart, .letterSpelling, .wordBtn{
+                padding: 0.5em;
+            }
+
+            .deleted{
+                animation-fill-mode: forwards;
+                transform: scaleX(0);
+            }
+
+        </style>
+        <script src="spelling.js" defer></script>
+    </head>
+    <body>
+        <h1>Spelling Helper</h1>
+        <div id="search"><input type="text" \><button>Spell It!</button></div>
+        <div id="spellings"></div>
+    </body>
+</html>
